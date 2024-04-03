@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<net version="1.9" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+    <location netOffset="0.00,0.00" convBoundary="-100.00,-100.00,100.00,100.00" origBoundary="-10000000000.00,-10000000000.00,10000000000.00,10000000000.00" projParameter="!"/>
+    <edge id=":center_0" function="internal">
+        <lane id=":center_0_0" index="0" disallow="pedestrian" speed="6.86" length="10.16" shape="-4.80,7.20 -5.19,4.75 -6.37,2.87 -8.34,1.56 -11.10,0.83"/>
+    </edge>
+    <edge id=":center_1" function="internal">
+        <lane id=":center_1_0" index="0" disallow="pedestrian" speed="13.89" length="22.20" shape="-4.80,7.20 -4.80,-15.00"/>
+    </edge>
+    <edge id=":center_2" function="internal">
+        <lane id=":center_2_0" index="0" disallow="pedestrian" speed="8.67" length="14.72" shape="11.10,4.80 6.78,4.04 3.67,2.20 1.79,-0.71 1.13,-4.69"/>
+    </edge>
+    <edge id=":center_3" function="internal">
+        <lane id=":center_3_0" index="0" disallow="pedestrian" speed="13.89" length="22.20" shape="11.10,4.80 -11.10,4.80"/>
+    </edge>
+    <edge id=":center_4" function="internal">
+        <lane id=":center_4_0" index="0" disallow="pedestrian" speed="6.86" length="10.16" shape="8.34,-1.56 6.37,-2.87 5.19,-4.75 4.80,-7.20 4.80,-10.40"/>
+    </edge>
+    <edge id=":center_5" function="internal">
+        <lane id=":center_5_0" index="0" disallow="pedestrian" speed="13.89" length="22.20" shape="8.34,-1.56 -13.86,-1.56"/>
+    </edge>
+    <edge id=":center_6" function="internal">
+        <lane id=":center_6_0" index="0" disallow="pedestrian" speed="8.67" length="14.72" shape="1.13,-4.69 1.79,-8.67 3.67,-11.47 6.78,-13.09 11.10,-13.60"/>
+    </edge>
+    <edge id=":center_7" function="internal">
+        <lane id=":center_7_0" index="0" disallow="pedestrian" speed="13.89" length="22.20" shape="1.13,-4.69 1.13,17.51"/>
+    </edge>
+    <edge id="1i" from="1" to="center" priority="-1">
+        <lane id="1i_0" index="0" disallow="pedestrian" speed="13.89" length="89.60" shape="-100.00,4.80 -11.10,4.80"/>
+    </edge>
+    <edge id="1o" from="center" to="1" priority="-1">
+        <lane id="1o_0" index="0" disallow="pedestrian" speed="13.89" length="89.60" shape="11.10,4.80 100.00,4.80"/>
+    </edge>
+    <edge id="2i" from="2" to="center" priority="-1">
+        <lane id="2i_0" index="0" disallow="pedestrian" speed="13.89" length="86.14" shape="11.10,100.00 11.10,17.51"/>
+    </edge>
+    <edge id="2o" from="center" to="2" priority="-1">
+        <lane id="2o_0" index="0" disallow="pedestrian" speed="13.89" length="86.14" shape="11.10,-13.60 11.10,-100.00"/>
+    </edge>
+    <edge id="3i" from="3" to="center" priority="-1">
+        <lane id="3i_0" index="0" disallow="pedestrian" speed="13.89" length="89.60" shape="100.00,-1.56 8.34,-1.56"/>
+    </edge>
+    <edge id="3o" from="center" to="3" priority="-1">
+        <lane id="3o_0" index="0" disallow="pedestrian" speed="13.89" length="89.60" shape="-11.10,0.83 -100.00,0.83"/>
+    </edge>
+    <edge id="4i" from="4" to="center" priority="-1">
+        <lane id="4i_0" index="0" disallow="pedestrian" speed="13.89" length="89.60" shape="-4.80,-100.00 -4.80,-15.00"/>
+    </edge>
+    <edge id="4o" from="center" to="4" priority="-1">
+        <lane id="4o_0" index="0" disallow="pedestrian" speed="13.89" length="89.60" shape="-4.80,7.20 -4.80,100.00"/>
+    </edge>
+    <junction id="1" type="dead_end" x="-100.00" y="0.00" incLanes="1o_0" intLanes="" shape="-100.00,0.00 -100.00,6.40 -100.00,0.00"/>
+    <junction id="2" type="dead_end" x="0.00" y="100.00" incLanes="2o_0" intLanes="" shape="0.00,100.00 12.70,100.00 0.00,100.00"/>
+    <junction id="3" type="dead_end" x="100.00" y="0.00" incLanes="3o_0" intLanes="" shape="100.00,0.00 100.00,-3.16 100.00,0.00"/>
+    <junction id="4" type="dead_end" x="0.00" y="-100.00" incLanes="4o_0" intLanes="" shape="0.00,-100.00 -6.40,-100.00 0.00,-100.00"/>
+    <junction id="center" type="priority" x="0.00" y="0.00" incLanes="4i_0 3i_0 2i_0 1i_0" intLanes=":center_0_0 :center_1_0 :center_2_0 :center_3_0 :center_4_0 :center_5_0 :center_6_0 :center_7_0" shape="-6.40,7.20 6.40,7.20 6.84,6.84 7.20,6.40 7.64,5.78 8.34,4.80 13.86,4.80 13.86,-3.16 12.84,-4.18 12.20,-4.80 11.47,-5.33 10.67,-5.78 9.79,-6.13 6.40,-10.40 -6.40,-10.40 -6.84,-9.96 -7.20,-9.60 -7.64,-9.16 -8.34,-8.44 -13.86,-1.56 -13.86,2.43 -12.84,3.45 -12.20,4.00 -11.47,4.47 -10.67,4.85 -9.79,5.15">
+        <request index="0" response="00000000" foes="00010000" cont="0"/>
+        <request index="1" response="00000000" foes="11010000" cont="0"/>
+        <request index="2" response="00000000" foes="11000000" cont="0"/>
+        <request index="3" response="00000011" foes="10000011" cont="0"/>
+        <request index="4" response="00000010" foes="00000010" cont="0"/>
+        <request index="5" response="00001110" foes="00001110" cont="0"/>
+        <request index="6" response="00001000" foes="00001000" cont="0"/>
+        <request index="7" response="00000000" foes="00001001" cont="0"/>
+    </junction>
+    <connection from="1i" to="1o" fromLane="0" toLane="0" via=":center_3_0" dir="s" state="M"/>
+    <connection from="1i" to="4o" fromLane="0" toLane="0" via=":center_0_0" dir="r" state="M"/>
+    <connection from="2i" to="3o" fromLane="0" toLane="0" via=":center_6_0" dir="r" state="m"/>
+    <connection from="2i" to="2o" fromLane="0" toLane="0" via=":center_7_0" dir="t" state="M"/>
+    <connection from="3i" to="4o" fromLane="0" toLane="0" via=":center_4_0" dir="l" state="m"/>
+    <connection from="3i" to="1o" fromLane="0" toLane="0" via=":center_5_0" dir="t" state="m"/>
+    <connection from="4i" to="2o" fromLane="0" toLane="0" via=":center_1_0" dir="l" state="M"/>
+    <connection from="4i" to="3o" fromLane="0" toLane="0" via=":center_2_0" dir="t" state="M"/>
+    <connection from=":center_0" to="4o" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":center_1" to="2o" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":center_2" to="3o" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":center_3" to="1o" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":center_4" to="4o" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":center_5" to="1o" fromLane="0" toLane="0" dir="t" state="M"/>
+    <connection from=":center_6" to="3o" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":center_7" to="2o" fromLane="0" toLane="0" dir="t" state="M"/>
+</net>
