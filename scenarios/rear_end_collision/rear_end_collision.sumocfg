@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <input>
+        <net-file value="rear_end_collision.net.xml"/>
+        <route-files value="rear_end_collision.rou.xml"/>
+        <additional-files value="rear_end_collision.add.xml"/>
+    </input>
+</configuration>
