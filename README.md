@@ -96,6 +96,55 @@ You can modify the code to customize the simulation or incorporate your own cras
 
 Feel free to explore and modify these files to suit your specific requirements.
 
+
+
+## Running the Simulation
+
+The `run_simulation.py` script demonstrates how to run a SUMO simulation with vehicle tracking, crash detection, and communication loss simulation. It retrieves trajectory information from SUMO, modifies the data based on custom requirements, and performs crash detection using the modified data.
+
+### Prerequisites
+
+Make sure you have the following dependencies installed:
+
+- TraCI Python library: `pip install traci`
+
+### Usage
+
+To run the simulation, follow these steps:
+
+1. Update the `path/to/sumo/config.sumocfg` in the script with the path to your SUMO configuration file (`.sumocfg`).
+
+2. Run the script:
+   ```
+   python run_simulation.py
+   ```
+
+   The script will start the SUMO simulation, retrieve trajectory information for each vehicle, simulate communication losses, modify the trajectory data, update the vehicle state, and perform crash detection.
+
+### Functionality
+
+The `run_simulation.py` script includes the following functions:
+
+- `run_simulation()`: Runs the SUMO simulation and performs the main simulation loop. It retrieves vehicle IDs, gets trajectory information, simulates communication losses, modifies trajectory data, updates vehicle states, and performs crash detection for each vehicle.
+
+- `modify_position(position)`: Modifies the position data based on custom requirements. You can implement your own logic here to modify the position data as needed.
+
+- `modify_speed(speed)`: Modifies the speed data based on custom requirements. You can implement your own logic here to modify the speed data as needed.
+
+- `detect_crash(vehicle_id, position, speed)`: Performs crash detection using the modified trajectory data. You can implement your crash detection algorithm here, log detected crashes, or store the results as required.
+
+### Customization
+
+You can customize the `run_simulation.py` script according to your specific requirements:
+
+- Implement your own logic in the `modify_position()` and `modify_speed()` functions to modify the trajectory data based on your specific needs.
+- Develop your crash detection algorithm in the `detect_crash()` function, utilizing the modified trajectory data.
+- Extend the script to include additional functionality or output relevant data for analysis.
+
+### Simulation Parameters
+
+- Communication Loss Probability: The script simulates communication losses with a 10% probability. You can adjust this value by modifying the condition `if random.random() < 0.1` in the `run_simulation()` function.
+
 ## Acknowledgments
 
 - The SUMO development team for providing a powerful traffic simulation software.
