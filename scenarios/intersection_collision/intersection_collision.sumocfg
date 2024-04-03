@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <input>
+        <net-file value="intersection_collision.net.xml"/>
+        <route-files value="intersection_collision.rou.xml"/>
+        <additional-files value="intersection_collision.add.xml"/>
+    </input>
+</configuration>
