@@ -1,5 +1,4 @@
 # CrashAnalysis
-# SUMO Intersection Collision Scenario
 
 This repository contains code for simulating crash analysis scenarios using the SUMO (Simulation of Urban MObility) traffic simulation software. The code demonstrates the integration of crash detection algorithms, vehicle tracking methods, and communication loss simulation.
 
