@@ -42,7 +42,7 @@ sumo-intersection-collision-scenario/
 
 To set up SUMO for the intersection collision scenario, follow these steps:
 
-1. Install SUMO by downloading it from the official website: [https://sumo.dlr.de/docs/Downloads.html](https://sumo.dlr.de/docs/Downloads.html)
+1. Install SUMO by downloading it from the official website: [https://sumo.dlr.de/docs/Downloads.html](https://sumo.dlr.de/docs/Downloads.html) *Specifics on donwloading for MacOS are at the bottom of this doc
 
 2. Set the `SUMO_HOME` environment variable to the directory where SUMO is installed.
 
@@ -149,4 +149,14 @@ You can customize the `run_simulation.py` script according to your specific requ
 
 - The SUMO development team for providing a powerful traffic simulation software.
 - The contributors to the TraCI Python library for enabling interaction with SUMO simulations.
+
+## Installing SUMO on macOS
+- Install Homebrew: If not already installed, use /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" in the terminal.
+- Install XQuartz: Required for SUMO's GUI, install with brew install --cask xquartz and restart your machine.
+- Tap SUMO Repository: Add the SUMO tap via brew tap dlr-ts/sumo.
+- Install SUMO: Finally, install SUMO using brew install sumo.
+- Set SUMO_HOME: Determine the installation path using brew info sumo, then add export SUMO_HOME=/path/to/sumo to your shell configuration file.
+- Testing the GUI: After installation, launch XQuartz and in the XQuartz terminal, test SUMO's GUI by running sumo-gui. This should open the SUMO GUI, confirming the installation is successful. If you encounter display issues, ensure XQuartz is running and try logging out and back in.
+
+For more detailed steps, refer to the Homebrew SUMO repository.
 
