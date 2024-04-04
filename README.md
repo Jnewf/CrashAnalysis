@@ -62,12 +62,12 @@ To run the code and simulate the intersection collision scenario, follow these s
 
 1. Clone this repository to your local machine:
    ```
-   git clone https://github.com/your-username/sumo-intersection-collision-scenario.git
+   git clone https://github.com/your-username/CrashAnalysis.git
    ```
 
 2. Navigate to the repository directory:
    ```
-   cd sumo-intersection-collision-scenario
+   cd CrashAnalysis
    ```
 
 3. Run the `crash_detection.py` script:
