@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <net version="1.1" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
-    <junction id="0" type="traffic_light" x="0.00" y="0.00" incLanes="north_0 south_0 east_0 west_0" intLanes="" shape="10.00,10.00 10.00,-10.00 -10.00,-10.00 -10.00,10.00">
+    <junction id="0" type="traffic_light" x="0.00" y="0.00" incLanes="north_0 south_0 east_0 west_0" intLanes="">
         <request index="0" response="0000" foes="1010" cont="0"/>
         <request index="1" response="0101" foes="0101" cont="0"/>
         <request index="2" response="0000" foes="1010" cont="0"/>
@@ -12,21 +12,15 @@
     <junction id="4" type="dead_end" x="-100.00" y="0.00" incLanes="" intLanes="" shape="-100.00,0.00"/>
 
     <edge id="north" from="1" to="0" priority="78" type="highway.primary">
-        <lane id="north_0" index="0" speed="13.89" length="100.00" shape="0.0,100.0 0.0,10.0"/>
+        <lane id="north_0" index="0" speed="13.89" length="89.60" shape="0.0,100.0 0.0,10.0"/>
     </edge>
     <edge id="south" from="0" to="2" priority="76" type="highway.primary">
-        <lane id="south_0" index="0" speed="13.89" length="100.00" shape="0.0,-10.0 0.0,-100.0"/>
+        <lane id="south_0" index="0" speed="13.89" length="89.60" shape="0.0,-10.0 0.0,-100.0"/>
     </edge>
     <edge id="east" from="3" to="0" priority="77" type="highway.primary">
-        <lane id="east_0" index="0" speed="13.89" length="100.00" shape="100.0,0.0 10.0,0.0"/>
+        <lane id="east_0" index="0" speed="13.89" length="89.60" shape="100.0,0.0 10.0,0.0"/>
     </edge>
     <edge id="west" from="0" to="4" priority="75" type="highway.primary">
-        <lane id="west_0" index="0" speed="13.89" length="100.00" shape="-10.0,0.0 -100.0,0.0"/>
+        <lane id="west_0" index="0" speed="13.89" length="89.60" shape="-10.0,0.0 -100.0,0.0"/>
     </edge>
-
-    <connection from="north" to="south" fromLane="0" toLane="0" tl="0" linkIndex="0" dir="s" state="O"/>
-    <connection from="east" to="west" fromLane="0" toLane="0" tl="0" linkIndex="1" dir="s" state="O"/>
-    <connection from="south" to="north" fromLane="0" toLane="0" tl="0" linkIndex="2" dir="s" state="O"/>
-    <connection from="west" to="east" fromLane="0" toLane="0" tl="0" linkIndex="3" dir="s" state="O"/>
 </net>
-
