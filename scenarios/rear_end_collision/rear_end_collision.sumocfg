@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
     <input>
         <net-file value="rear_end_collision.net.xml"/>
         <route-files value="rear_end_collision.rou.xml"/>
-        <additional-files value="rear_end_collision.add.xml"/>
+        <!-- If you have additional elements like detectors, uncomment the next line -->
+        <!-- <additional-files value="rear_end_collision.add.xml"/> -->
     </input>
+    <time>
+        <begin value="0"/>
+        <end value="300"/>
+    </time>
 </configuration>
