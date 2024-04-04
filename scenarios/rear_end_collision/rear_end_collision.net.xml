@@ -3,6 +3,7 @@
     <junction id="begin" type="dead_end" x="-500.0" y="0.0" incLanes="" intLanes="" shape="-500.0,-20.0 -500.0,20.0"/>
     <junction id="end" type="dead_end" x="500.0" y="0.0" incLanes="" intLanes="" shape="500.0,-20.0 500.0,20.0"/>
     <edge id="mainroad" from="begin" to="end" priority="78" type="highway.primary">
-        <lane id="mainroad_0" index="0" speed="13.89" length="1000.0"/>
+        <lane id="mainroad_0" index="0" speed="13.89" length="1000.0" shape="-500.0,0.0 500.0,0.0"/>
     </edge>
 </net>
+
