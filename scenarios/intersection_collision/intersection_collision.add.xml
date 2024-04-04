@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
-    <tlLogic id="center" type="static" programID="0" offset="0">
-        <phase duration="30" state="GrGr"/>
-        <phase duration="5" state="yryr"/>
-        <phase duration="30" state="rGrG"/>
-        <phase duration="5" state="ryry"/>
+<additional>
+    <tlLogic id="0" type="static" programID="0" offset="0">
+        <phase duration="30" state="GGrr"/>
+        <phase duration="5" state="yyrr"/>
+        <phase duration="30" state="rrGG"/>
+        <phase duration="5" state="rryy"/>
     </tlLogic>
 </additional>
