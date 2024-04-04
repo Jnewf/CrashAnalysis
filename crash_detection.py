@@ -107,10 +107,16 @@ def compare_tracking_methods(sumo_config):
     
     # Calculate average tracking accuracy metrics
     num_vehicles = len(vehicle_ids)
-    kalman_mae_avg = kalman_mae_sum / num_vehicles
-    kalman_rmse_avg = kalman_rmse_sum / num_vehicles
-    constant_speed_mae_avg = constant_speed_mae_sum / num_vehicles
-    constant_speed_rmse_avg = constant_speed_rmse_sum / num_vehicles
+    if num_vehicles > 0:
+        kalman_mae_avg = kalman_mae_sum / num_vehicles
+        kalman_rmse_avg = kalman_rmse_sum / num_vehicles
+        constant_speed_mae_avg = constant_speed_mae_sum / num_vehicles
+        constant_speed_rmse_avg = constant_speed_rmse_sum / num_vehicles
+    else:
+        kalman_mae_avg = 0
+        kalman_rmse_avg = 0
+        constant_speed_mae_avg = 0
+        constant_speed_rmse_avg = 0
     
     print("Kalman Filter - Average MAE:", kalman_mae_avg)
     print("Kalman Filter - Average RMSE:", kalman_rmse_avg)
