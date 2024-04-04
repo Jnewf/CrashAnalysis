@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
-    <vType id="car" length="5" maxSpeed="27.80" accel="2.6" decel="4.5" sigma="0.5" />
-    <vType id="slowCar" length="5" maxSpeed="20.00" accel="2.6" decel="4.5" sigma="0.5" />
-    <route id="route0" edges="1" />
-    <vehicle id="0" type="car" route="route0" depart="0" departLane="1" departSpeed="20" />
-    <vehicle id="1" type="slowCar" route="route0" depart="2" departLane="1" departSpeed="15" />
+<routes>
+    <vType id="car" accel="2.6" decel="4.5" sigma="0.5" length="5" minGap="2.5" maxSpeed="33.33"/>
+    <route id="main_route" edges="mainroad"/>
+
+    <vehicle id="lead_vehicle" type="car" route="main_route" depart="0"/>
+    <vehicle id="following_vehicle" type="car" route="main_route" depart="10" color="1,0,0"/>
+    <!-- Additional vehicles can be added with different depart times or speeds -->
 </routes>
