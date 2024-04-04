@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <net version="1.1" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
     <junction id="0" type="traffic_light" x="0.00" y="0.00" incLanes="" intLanes="" shape="10.00,10.00 10.00,-10.00 -10.00,-10.00 -10.00,10.00"/>
-    <edge id="north" from="0" to="1" priority="78" type="highway.primary">
-        <lane id="north_0" index="0" speed="13.89" length="100.00"/>
+    <junction id="1" type="dead_end" x="0.00" y="100.00" incLanes="" intLanes="" shape="0.00,100.00"/>
+    <junction id="2" type="dead_end" x="0.00" y="-100.00" incLanes="" intLanes="" shape="0.00,-100.00"/>
+    <junction id="3" type="dead_end" x="100.00" y="0.00" incLanes="" intLanes="" shape="100.00,0.00"/>
+    <junction id="4" type="dead_end" x="-100.00" y="0.00" incLanes="" intLanes="" shape="-100.00,0.00"/>
+    <edge id="north" from="1" to="0" priority="78" type="highway.primary">
+        <lane id="north_0" index="0" speed="13.89" length="100.00" shape="0.0,100.0 0.0,0.0"/>
     </edge>
-    <edge id="south" from="0" to="1" priority="76" type="highway.primary">
-        <lane id="south_0" index="0" speed="13.89" length="100.00"/>
+    <edge id="south" from="2" to="0" priority="76" type="highway.primary">
+        <lane id="south_0" index="0" speed="13.89" length="100.00" shape="0.0,-100.0 0.0,0.0"/>
     </edge>
-    <edge id="east" from="0" to="1" priority="77" type="highway.primary">
-        <lane id="east_0" index="0" speed="13.89" length="100.00"/>
+    <edge id="east" from="3" to="0" priority="77" type="highway.primary">
+        <lane id="east_0" index="0" speed="13.89" length="100.00" shape="100.0,0.0 0.0,0.0"/>
     </edge>
-    <edge id="west" from="0" to="1" priority="75" type="highway.primary">
-        <lane id="west_0" index="0" speed="13.89" length="100.00"/>
+    <edge id="west" from="4" to="0" priority="75" type="highway.primary">
+        <lane id="west_0" index="0" speed="13.89" length="100.00" shape="-100.0,0.0 0.0,0.0"/>
     </edge>
-    <!-- Add more junctions and edges as needed -->
 </net>
+
