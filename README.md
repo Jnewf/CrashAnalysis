@@ -51,7 +51,8 @@ To set up SUMO for the intersection collision scenario, follow these steps:
    - `intersection_collision.rou.xml`: Defines the vehicle routes and types.
    - `intersection_collision.add.xml`: Defines additional simulation elements, such as traffic lights.
    - `intersection_collision.sumocfg`: Configures the simulation settings.
-    Repear for rear_end_collision scenario
+    
+   Repeat for rear_end_collision scenario
 
    You can find the XML code for these files in the `scenarios/intersection_collision/` directory of this repository.
 
