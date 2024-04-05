@@ -8,26 +8,24 @@ if 'SUMO_HOME' in os.environ:
 else:
     sys.exit("Please declare the environment variable 'SUMO_HOME'")
 
-import traci  # Import TraCI module to interact with SUMO
+from sumolib import checkBinary  # Corrected import for checkBinary
+import traci
 
 def run_simulation():
     while traci.simulation.getMinExpectedNumber() > 0:
-        traci.simulationStep()  # Proceed to the next time step in the simulation
-        vehicle_ids = traci.vehicle.getIDList()  # Retrieve a list of all vehicle IDs currently in the simulation
+        traci.simulationStep()
+        vehicle_ids = traci.vehicle.getIDList()
         
-        # Iterate through each vehicle and print its ID, position, and speed
         for vehicle_id in vehicle_ids:
             position = traci.vehicle.getPosition(vehicle_id)
             speed = traci.vehicle.getSpeed(vehicle_id)
             print(f"Vehicle {vehicle_id}: Position = {position}, Speed = {speed} m/s")
 
-    traci.close()  # Close the TraCI connection
+    traci.close()
 
 if __name__ == "__main__":
-    sumoBinary = traci.checkBinary('sumo')  # Use 'sumo-gui' if you want to visualize the simulation
-    config_file = "scenarios/lane_change_collision/lane_change_collision.sumocfg"  # Path to the configuration file
+    sumoBinary = checkBinary('sumo')  # Use 'sumo-gui' if you want to visualize the simulation
+    config_file = "scenarios/lane_change_collision/lane_change_collision.sumocfg"
 
-    # Start the TraCI connection with the specified SUMO configuration file
     traci.start([sumoBinary, "-c", config_file])
-
-    run_simulation()  # Run the simulation
+    run_simulation()
