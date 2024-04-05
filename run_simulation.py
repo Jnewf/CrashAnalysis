@@ -1,50 +1,39 @@
 import traci
+import random
 
-def run_simulation():
-    traci.start(["sumo", "-c", "path/to/sumo/config.sumocfg"])
-    
+def modify_position(position):
+    # Placeholder for position modification logic
+    return position
+
+def modify_speed(speed):
+    # Placeholder for speed modification logic
+    return speed
+
+def detect_crash(vehicle_id, position, speed):
+    # Placeholder for crash detection logic
+
+def run_simulation(scenario_name):
+    config_file = f"scenarios/{scenario_name}/{scenario_name}.sumocfg"
+    traci.start(["sumo", "-c", config_file])
+
     while traci.simulation.getMinExpectedNumber() > 0:
         traci.simulationStep()
-        
         vehicle_ids = traci.vehicle.getIDList()
-        
+
         for vehicle_id in vehicle_ids:
-            # Get trajectory information
             position = traci.vehicle.getPosition(vehicle_id)
             speed = traci.vehicle.getSpeed(vehicle_id)
-            
-            # Simulate communication losses
-            if random.random() < 0.1:  # 10% probability of communication loss
+            if random.random() < 0.1:  # Simulating 10% probability of communication loss
                 traci.vehicle.setParameter(vehicle_id, "communication_loss", "true")
             else:
                 traci.vehicle.setParameter(vehicle_id, "communication_loss", "false")
-            
-            # Modify trajectory data
             modified_position = modify_position(position)
             modified_speed = modify_speed(speed)
-            
-            # Update vehicle state based on modified data
             traci.vehicle.setSpeed(vehicle_id, modified_speed)
-            
-            # Perform crash detection
             detect_crash(vehicle_id, modified_position, modified_speed)
-    
+
     traci.close()
 
-def modify_position(position):
-    # Modify position data based on your requirements
-    # ...
-    return modified_position
-
-def modify_speed(speed):
-    # Modify speed data based on your requirements
-    # ...
-    return modified_speed
-
-def detect_crash(vehicle_id, position, speed):
-    # Perform crash detection using the modified trajectory data
-    # ...
-    # Log detected crashes or store results
-    # ...
-
-run_simulation()
+# Example usage for both scenarios
+run_simulation("rear_end_collision")
+run_simulation("lane_change_collision")
