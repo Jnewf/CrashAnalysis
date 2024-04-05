@@ -2,8 +2,13 @@
 <net version="1.1" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
     <location netOffset="0,0" convBoundary="0.00,0.00,500.00,20.00" origBoundary="0.00,0.00,500.00,20.00" projParameter="!"/>
 
-    <edge id="mainroad" from="-1" to="1" priority="78" type="highway.primary">
-        <lane id="mainroad_0" index="0" speed="25.00" length="500.0" width="3.2"/>
-        <lane id="mainroad_1" index="1" speed="25.00" length="500.0" width="3.2"/>
+    <!-- Define junctions at the start and end of the main road -->
+    <junction id="0" type="dead_end" x="0.0" y="10.0" shape="0.0,10.0"/>
+    <junction id="1" type="dead_end" x="500.0" y="10.0" shape="500.0,10.0"/>
+
+    <!-- Corrected edge to use existing junction IDs and added shape attributes to lanes -->
+    <edge id="mainroad" from="0" to="1" priority="78" type="highway.primary">
+        <lane id="mainroad_0" index="0" speed="25.00" length="500.0" width="3.2" shape="0.0,10.0 500.0,10.0"/>
+        <lane id="mainroad_1" index="1" speed="25.00" length="500.0" width="3.2" shape="0.0,13.2 500.0,13.2"/>
     </edge>
 </net>
