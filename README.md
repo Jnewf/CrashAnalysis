@@ -1,162 +1,82 @@
-# CrashAnalysis
+CrashAnalysis
 
-This repository contains code for simulating crash analysis scenarios using the SUMO (Simulation of Urban MObility) traffic simulation software. The code demonstrates the integration of crash detection algorithms, vehicle tracking methods, and communication loss simulation.
+This repository is dedicated to simulating and analyzing vehicular crash scenarios using SUMO (Simulation of Urban MObility), with a particular focus on rear-end collisions and lane-changing incidents. It showcases the integration of crash detection algorithms, vehicle tracking techniques, and the simulation of variable traffic conditions.
 
-## Prerequisites
+Prerequisites
 
-To run the code in this repository, you need to have the following:
+Ensure you have the following installed to use this repository effectively:
 
-- Python 3.x installed
-- SUMO installed and the `SUMO_HOME` environment variable set
-- TraCI Python library installed (`pip install traci`)
+	•	Python 3.x
+	•	SUMO, with the SUMO_HOME environment variable correctly set
+	•	TraCI Python library (pip install traci)
 
-## Repository Structure
+Repository Structure
 
-The repository is organized as follows:
-
-```
-sumo-intersection-collision-scenario/
+CrashAnalysis/
 ├── scenarios/
 │   ├── rear_end_collision/
 │   │   ├── rear_end_collision.net.xml
 │   │   ├── rear_end_collision.rou.xml
-│   │   ├── rear_end_collision.add.xml
 │   │   └── rear_end_collision.sumocfg
-│   └── intersection_collision/
-│       ├── intersection_collision.net.xml
-│       ├── intersection_collision.rou.xml
-│       ├── intersection_collision.add.xml
-│       └── intersection_collision.sumocfg
+│   └── lane_change_collision/
+│       ├── lane_change_collision.net.xml
+│       ├── lane_change_collision.rou.xml
+│       └── lane_change_collision.sumocfg
 ├── crash_detection.py
+├── run_simulation.py
 ├── kalman_filter.py
-├── constant_speed_model.py
-└── README.md
-```
+└── constant_speed_model.py
 
-- The `scenarios/` directory contains the SUMO configuration files and network files for different collision scenarios.
-- `crash_detection.py` is the main script that integrates the crash detection algorithms and vehicle tracking methods with SUMO simulations.
-- `kalman_filter.py` and `constant_speed_model.py` contain the implementations of the Kalman filter and constant speed model for vehicle tracking.
-- `README.md` provides an overview of the project and instructions on how to use the code.
+	•	scenarios/: Contains SUMO configurations and network files for the crash scenarios.
+	•	crash_detection.py: Main script for running crash detection simulations.
+	•	run_simulation.py: Utility script for running SUMO simulations with custom behavior.
+	•	kalman_filter.py & constant_speed_model.py: Implement vehicle tracking algorithms.
 
-## Setting Up SUMO
+Quick Start
 
-To set up SUMO for the intersection collision scenario, follow these steps:
+	1.	Clone this repository:
 
-1. Install SUMO by downloading it from the official website: [https://sumo.dlr.de/docs/Downloads.html](https://sumo.dlr.de/docs/Downloads.html) *Specifics on donwloading for MacOS are at the bottom of this doc
+git clone https://github.com/<your-username>/CrashAnalysis.git
 
-2. Set the `SUMO_HOME` environment variable to the directory where SUMO is installed.
 
-3. Create the necessary files for the intersection collision scenario:
-   - `intersection_collision.net.xml`: Defines the road network.
-   - `intersection_collision.rou.xml`: Defines the vehicle routes and types.
-   - `intersection_collision.add.xml`: Defines additional simulation elements, such as traffic lights.
-   - `intersection_collision.sumocfg`: Configures the simulation settings.
+	2.	Navigate to the repository folder:
 
-   You can find the XML code for these files in the `scenarios/intersection_collision/` directory of this repository.
+cd CrashAnalysis
 
-   Repeat for rear_end_collision scenario
 
-## Running the Code
+	3.	To run crash detection simulations, execute:
 
-To run the code and simulate the intersection collision scenario, follow these steps:
+python crash_detection.py
 
-1. Clone this repository to your local machine:
-   ```
-   git clone https://github.com/your-username/CrashAnalysis.git
-   ```
 
-2. Navigate to the repository directory:
-   ```
-   cd CrashAnalysis
-   ```
+	4.	To run standard SUMO simulations with custom vehicle behavior:
 
-3. Run the `crash_detection.py` script:
-   ```
-   python crash_detection.py
-   ```
-
-   This script will start the SUMO simulation, integrate the crash detection algorithms and vehicle tracking methods, and output the results.
-
-4. Observe the simulation results, including the detected crashes, tracking accuracy metrics, and any other relevant information.
-
-## Modifying the Code
-
-You can modify the code to customize the simulation or incorporate your own crash detection algorithms and vehicle tracking methods. Here are a few key files and functions to consider:
-
-- `crash_detection.py`:
-  - `detect_crashes_with_kalman_filter()`: Integrates the Kalman filter for vehicle tracking and crash detection.
-  - `detect_crashes_with_constant_speed()`: Integrates the constant speed model for vehicle tracking and crash detection.
-  - `compare_tracking_methods()`: Compares the performance of the Kalman filter and constant speed model.
-
-- `kalman_filter.py`:
-  - `kalman_filter()`: Implements the Kalman filter algorithm for vehicle tracking.
-
-- `constant_speed_model.py`:
-  - `constant_speed_model()`: Implements the constant speed model for vehicle tracking.
-
-Feel free to explore and modify these files to suit your specific requirements.
+python run_simulation.py <scenario_name>
 
 
 
-## Running the Simulation
+Replace <scenario_name> with either rear_end_collision or lane_change_collision.
 
-The `run_simulation.py` script demonstrates how to run a SUMO simulation with vehicle tracking, crash detection, and communication loss simulation. It retrieves trajectory information from SUMO, modifies the data based on custom requirements, and performs crash detection using the modified data.
+Customization and Extension
 
-### Prerequisites
+Feel free to modify the scripts to incorporate your crash detection algorithms, adjust vehicle tracking models, or simulate different traffic conditions. Key points of interest might include:
 
-Make sure you have the following dependencies installed:
+	•	Enhancing kalman_filter.py and constant_speed_model.py for more accurate vehicle tracking.
+	•	Extending crash_detection.py to include additional crash scenarios or detection mechanisms.
+	•	Adapting run_simulation.py to simulate more complex vehicle behaviors or interactions.
 
-- TraCI Python library: `pip install traci`
+Installing SUMO on macOS
 
-### Usage
+	•	Install Homebrew: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	•	Install XQuartz (for SUMO’s GUI): brew install --cask xquartz and restart your machine.
+	•	Tap SUMO Repository: brew tap dlr-ts/sumo.
+	•	Install SUMO: brew install sumo.
+	•	Set SUMO_HOME: Find SUMO’s path with brew info sumo, then add export SUMO_HOME=/path/to/sumo to your shell configuration file.
+	•	Test GUI: Launch XQuartz, and in its terminal, run sumo-gui.
 
-To run the simulation, follow these steps:
+For a detailed guide, refer to the Homebrew SUMO repository.
 
-1. Update the `path/to/sumo/config.sumocfg` in the script with the path to your SUMO configuration file (`.sumocfg`).
+Acknowledgments
 
-2. Run the script:
-   ```
-   python run_simulation.py
-   ```
-
-   The script will start the SUMO simulation, retrieve trajectory information for each vehicle, simulate communication losses, modify the trajectory data, update the vehicle state, and perform crash detection.
-
-### Functionality
-
-The `run_simulation.py` script includes the following functions:
-
-- `run_simulation()`: Runs the SUMO simulation and performs the main simulation loop. It retrieves vehicle IDs, gets trajectory information, simulates communication losses, modifies trajectory data, updates vehicle states, and performs crash detection for each vehicle.
-
-- `modify_position(position)`: Modifies the position data based on custom requirements. You can implement your own logic here to modify the position data as needed.
-
-- `modify_speed(speed)`: Modifies the speed data based on custom requirements. You can implement your own logic here to modify the speed data as needed.
-
-- `detect_crash(vehicle_id, position, speed)`: Performs crash detection using the modified trajectory data. You can implement your crash detection algorithm here, log detected crashes, or store the results as required.
-
-### Customization
-
-You can customize the `run_simulation.py` script according to your specific requirements:
-
-- Implement your own logic in the `modify_position()` and `modify_speed()` functions to modify the trajectory data based on your specific needs.
-- Develop your crash detection algorithm in the `detect_crash()` function, utilizing the modified trajectory data.
-- Extend the script to include additional functionality or output relevant data for analysis.
-
-### Simulation Parameters
-
-- Communication Loss Probability: The script simulates communication losses with a 10% probability. You can adjust this value by modifying the condition `if random.random() < 0.1` in the `run_simulation()` function.
-
-## Acknowledgments
-
-- The SUMO development team for providing a powerful traffic simulation software.
-- The contributors to the TraCI Python library for enabling interaction with SUMO simulations.
-
-## Installing SUMO on macOS
-- Install Homebrew: If not already installed, use /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" in the terminal.
-- Install XQuartz: Required for SUMO's GUI, install with brew install --cask xquartz and restart your machine.
-- Tap SUMO Repository: Add the SUMO tap via brew tap dlr-ts/sumo.
-- Install SUMO: Finally, install SUMO using brew install sumo.
-- Set SUMO_HOME: Determine the installation path using brew info sumo, then add export SUMO_HOME=/path/to/sumo to your shell configuration file.
-- Testing the GUI: After installation, launch XQuartz and in the XQuartz terminal, test SUMO's GUI by running sumo-gui. This should open the SUMO GUI, confirming the installation is successful. If you encounter display issues, ensure XQuartz is running and try logging out and back in.
-
-For more detailed steps, refer to the Homebrew SUMO repository.
-
+	•	SUMO developers for their comprehensive traffic simulation suite.
+	•	Contributors to the TraCI library for enabling seamless interaction with SUMO.
